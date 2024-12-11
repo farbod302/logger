@@ -3,12 +3,12 @@ const app = express()
 const bodyParse = require("body-parser")
 const fs = require("fs")
 const https = require("https")
-
+const cors=require("cors")
 
 // const http = require("http")
 // const server = http.createServer(app)
 
-
+app.use(cors())
 const conf = {
     key: fs.readFileSync("/etc/letsencrypt/live/nutrostyle.nutrosal.com/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/nutrostyle.nutrosal.com/fullchain.pem")
